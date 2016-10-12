@@ -1,0 +1,14 @@
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe.config
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\bin\Debug\VendingMachine.pdb
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csprojResolveAssemblyReference.cache
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\obj\Debug\MainWindow.g.cs
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\obj\Debug\App.g.cs
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\obj\Debug\VendingMachine_MarkupCompile.cache
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\obj\Debug\VendingMachine_MarkupCompile.lref
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\obj\Debug\MainWindow.baml
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\obj\Debug\VendingMachine.g.resources
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\obj\Debug\VendingMachine.Properties.Resources.resources
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.GenerateResource.Cache
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\obj\Debug\VendingMachine.exe
+c:\users\jacob\onedrive\documents\visual studio 2015\Projects\VendingMachine\VendingMachine\obj\Debug\VendingMachine.pdb
