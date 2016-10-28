@@ -24,6 +24,7 @@ namespace VendingMachine.Classes
 
         public List<Item> GenerateInventory(FileStream inventoryFile)
         {
+            //foreach line in file create new item class and fill with information from file
             return new List<Item>();
         }
 
