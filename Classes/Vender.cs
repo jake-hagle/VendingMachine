@@ -8,18 +8,18 @@ namespace VendingMachine.Classes
 {
     public class Vender
     {
-        public List<Item> Items { get; set; }
-        public bool PaymentReceived { get; set; }
+        public Item Item { get; set; }
 
+         
 
-        public bool CheckPayment()
+        public void Vend(Item vendItem)
         {
-            return true;
+            Console.Write(Item);
         }
 
-        public void Vend(List<Item> vendItems)
+        public void RemoveItem(Inventory currentInventory)
         {
-            
+         //Remove item loaded inventory   
         }
 
 

@@ -8,7 +8,12 @@ namespace VendingMachine.Classes
 {
     public class ShoppingCart
     {
-        public List<Item> Items { get; set; }
-        public decimal Total { get; set; }
+        public List<Item> CartItems { get; set; }
+
+        public void ClearCart()
+        {
+            CartItems = new List<Item>();
+        }
+        
     }
 }
