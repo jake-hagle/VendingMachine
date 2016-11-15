@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Controls.Primitives;
 
 namespace VendingMachine.Classes
 {
@@ -15,7 +16,7 @@ namespace VendingMachine.Classes
         {
             if (totalDue > CurrentPayment)
             {
-                Console.Write("More Moniez peeasssee");
+                PaymentAccepted = false;
             }
             else
             {
@@ -29,10 +30,9 @@ namespace VendingMachine.Classes
             }
         }
 
-        public void GiveChange()
+        public decimal GiveChange()
         {
-            Console.Write("HERES YOUR CHANGE! {1}", ChangeDue.ToString() );
-
+            return ChangeDue != 0 ? ChangeDue : 0;
         }
 
         public void CancelPayment()

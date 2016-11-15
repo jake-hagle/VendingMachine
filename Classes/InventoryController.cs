@@ -21,18 +21,7 @@ namespace VendingMachine.Classes
             
             return true;
         }
-
-        
-
-        public void ClearCart(bool canClear, ShoppingCart currentCart)
-        {
-            if (currentCart.CartItems.Count > 0)
-            {
-                currentCart.CartItems = new List<Item>();
-            }
-        }
-
-        
+       
 
         public decimal CalcTotal(ShoppingCart currentCart)
         {

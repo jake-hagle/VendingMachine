@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace VendingMachine.Classes
 {
@@ -12,9 +13,9 @@ namespace VendingMachine.Classes
 
          
 
-        public void Vend(Item vendItem)
+        public void Vend(Item vendItem, TextBlock outputTextBlock)
         {
-            Console.Write(Item);
+            outputTextBlock.Text += "Vending Item: " + vendItem.Name;
         }
 
         public void RemoveItem(Inventory currentInventory)

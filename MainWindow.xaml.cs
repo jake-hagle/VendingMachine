@@ -40,13 +40,17 @@ namespace VendingMachine
             
             Inventory = new Inventory();
             ShoppingCart = new ShoppingCart();
+            ShoppingCart.CartItems = new List<Item>();
             Vender = new Vender();
             Keypad = new Keypad();
             InventoryController = new InventoryController();
+            InventoryController.SelectedItem = new Item();
             PaymentController = new PaymentController();
 
-            //var inventoryFile = new FileStream("file.txt", FileMode.Open);
-            //Inventory.Items = Inventory.GenerateInventory(inventoryFile);
+            var inventoryFile = "file.txt";
+            Inventory.Items = Inventory.GenerateInventory(inventoryFile);
+
+            VendingMachineOutput.Text = "Vendo-Tron 3000:\n Please make a selection!\n";
 
         }
 
@@ -56,7 +60,7 @@ namespace VendingMachine
             var contents = paymentButton.Content;
             var amountPaid = Convert.ToDecimal(contents);
             PaymentController.CurrentPayment += amountPaid;
-
+            VendingMachineOutput.Text += "Amount Paid: $" + PaymentController.CurrentPayment + "\n";
         }
 
         public void SelectItemOnClick(object sender, RoutedEventArgs e)
@@ -67,14 +71,20 @@ namespace VendingMachine
                     Inventory);
             if (isAvailable)
             {
+
                 InventoryController.SelectedItem =
-                    Inventory.Items.FirstOrDefault(x => x.Location == InventoryController.ItemSelection);
+                    Inventory.Items.Find(x => x.Location.Equals(InventoryController.ItemSelection));
+
+
+                if (InventoryController.SelectedItem == null) return;
                 ShoppingCart.CartItems.Add(InventoryController.SelectedItem);
-               // PRINT ITEM IS ADDED TO CART
+                VendingMachineOutput.Text += "\n" + InventoryController.SelectedItem.Name +
+                " has been added to the cart.\n";
             }
             else
             {
-               // Print not available make new selection
+                VendingMachineOutput.Text +=
+                    "The item you selected is no longer available. Please select another item\n";
             }
         }
 
@@ -82,37 +92,58 @@ namespace VendingMachine
         {
             InventoryController.Total = InventoryController.CalcTotal(ShoppingCart);
             if (InventoryController.Total == 0) return;
-            if (PaymentController.CurrentPayment != 0)
+            if (PaymentController != null && PaymentController.CurrentPayment != 0)
             {
                 PaymentController.ComparePaymentToCost(InventoryController.Total);
                 if (PaymentController.PaymentAccepted)
                 {
-                    if (PaymentController.ChangeDue != 0)
-                    {
-                        PaymentController.GiveChange();
-                    }
+                    
 
                     foreach (var item in ShoppingCart.CartItems)
                     {
-                        Vender.Vend(item);
+                        Vender.Vend(item, VendingMachineOutput);
                         Vender.RemoveItem(Inventory);
                     }
+
+                    if (PaymentController.ChangeDue != 0)
+                    {
+                        var changeDue = PaymentController.GiveChange();
+                        VendingMachineOutput.Text += "Dispensing Change...\n" + "Change Due: $" + changeDue + "\n";
+                        PaymentController.ChangeDue = 0;
+
+                    }
+
+                    PaymentController.CurrentPayment = 0;
+                    ShoppingCart.ClearCart();
+
+                    VendingMachineOutput.Text += "\n Please make a selection or insert payment.\n";
+                    
+
+
+                    return;
                 }
                 else
                 {
-                    //Payment not accepted, please try again 
+                    VendingMachineOutput.Text += "Please insert more money.\n Amount Paid: $" +
+                                                 PaymentController.CurrentPayment + "\n" + "Total Due: $" +
+                                                 InventoryController.Total + "\n";
                 }
             }
             else
             {
-                //Please insert payment and try again
+                VendingMachineOutput.Text += "Please make a selection or insert payment.\n";
                 return;
             }
         }
 
         public void CancelOnClick(object sender, RoutedEventArgs e)
         {
+            if (PaymentController.ChangeDue != 0)
+            {
+                var changeDue = PaymentController.GiveChange();
+                VendingMachineOutput.Text += "Dispensing Change...\n" + "Change Due: $" + changeDue + "\n";
 
+            }
             ShoppingCart.ClearCart();
             PaymentController.CancelPayment();
             
