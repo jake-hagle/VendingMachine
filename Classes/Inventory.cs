@@ -34,13 +34,6 @@ namespace VendingMachine.Classes
                 Items.Add(tempItem);
             }
 
-            // lines.Select allows me to project each line as a Person. 
-            // This will give me an IEnumerable<Person> back.
-            
-
-            
-           
-            
             return Items;
         }
 

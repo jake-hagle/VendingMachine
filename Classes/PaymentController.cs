@@ -21,25 +21,39 @@ namespace VendingMachine.Classes
             else
             {
                 PaymentAccepted = true;
-                if (CurrentPayment > totalDue)
-                {
-                    ChangeDue = CurrentPayment - totalDue;
-                   
-                }
-                
             }
+
+            
         }
 
-        public decimal GiveChange()
+        public decimal GiveChange(decimal totalDue)
         {
-            return ChangeDue != 0 ? ChangeDue : 0;
+            if (CurrentPayment != 0 && totalDue == 0)
+            {
+                ChangeDue = CurrentPayment;
+            }else if (CurrentPayment != 0 && CurrentPayment < totalDue)
+            {
+                ChangeDue = CurrentPayment;
+            }   
+            else if (CurrentPayment > totalDue)
+            {
+                ChangeDue = CurrentPayment - totalDue;
+            }
+            else
+            {
+                ChangeDue = 0;
+            }
+            CurrentPayment = 0;
+            return ChangeDue;
         }
 
         public void CancelPayment()
         {
             if (CurrentPayment == 0) return;
-            ChangeDue = CurrentPayment;
-            GiveChange();
+            
+            ChangeDue = 0;
+            CurrentPayment = 0;
+            
         }
         
     }

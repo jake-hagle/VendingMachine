@@ -33,7 +33,7 @@
                 VerticalAlignment="Top" 
                 TextWrapping="Wrap" 
                 TextAlignment="Left" 
-                VerticalScrollBarVisibility="Auto" Width="375" Height="309" />
+                VerticalScrollBarVisibility="Auto" Width="375" Height="309"  />
         </Grid>
 
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -12,15 +13,31 @@ namespace VendingMachine.Classes
         public Item Item { get; set; }
 
          
-
-        public void Vend(Item vendItem, TextBox outputTextBlock)
+        
+        public void Vend(TextBox outputTextBlock)
         {
-            outputTextBlock.Text += "Vending Item: " + vendItem.Name;
+            if (Item.Quantity > 1)
+            {
+                var i = Item.Quantity;
+                while (i != 0)
+                {
+                    outputTextBlock.Text += "Vending Item: " + Item.Name + "\n";
+                    
+                    i -= 1;
+                }
+            }
+            
         }
 
-        public void RemoveItem(Inventory currentInventory)
+        public Inventory RemoveItem(Inventory currentInventory)
         {
-         //Remove item loaded inventory   
+            
+            var temp = currentInventory.Items.Find(x=>x.Location == Item.Location);
+            temp.Quantity -= Item.Quantity;
+
+            return currentInventory;
+            
+
         }
 
 

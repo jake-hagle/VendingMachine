@@ -18,17 +18,26 @@ namespace VendingMachine.Classes
 
         public bool CheckProductAvailability(string selectedItem, Inventory currentInventory)
         {
+            var temp = currentInventory.Items.FirstOrDefault(x => x.Location == selectedItem);
+            if (temp == null) return false;
+            if (temp.Quantity > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
             
-            return true;
         }
        
 
         public decimal CalcTotal(ShoppingCart currentCart)
         {
-            
+            Total = 0;
             foreach (var item in currentCart.CartItems)
             {
-                Total += item.Price;
+                Total += item.Price * item.Quantity;
             }
             return Total;
         }
