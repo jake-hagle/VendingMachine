@@ -28,8 +28,13 @@
             <Button x:Name="PayQuarter" Content=".25" Click ="PayOnClick" HorizontalAlignment="Left" Margin="142,199,0,0" VerticalAlignment="Top" Width="61" Height="36"/>
 
         </Grid>
-
-        <TextBlock x:Name="VendingMachineOutput" HorizontalAlignment="Left" Margin="700,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="273" Width="223"><Run Text="TextBlock"/></TextBlock>
+        <Grid HorizontalAlignment="Left" Height="309" Margin="675,103,0,0" VerticalAlignment="Top" Width="375">
+            <TextBox x:Name="VendingMachineOutput" HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                TextWrapping="Wrap" 
+                TextAlignment="Left" 
+                VerticalScrollBarVisibility="Auto" Width="375" Height="309" />
+        </Grid>
 
 
     </Grid>

@@ -13,7 +13,7 @@ namespace VendingMachine.Classes
 
          
 
-        public void Vend(Item vendItem, TextBlock outputTextBlock)
+        public void Vend(Item vendItem, TextBox outputTextBlock)
         {
             outputTextBlock.Text += "Vending Item: " + vendItem.Name;
         }
