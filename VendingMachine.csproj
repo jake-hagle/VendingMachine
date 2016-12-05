@@ -65,7 +65,6 @@
     </Compile>
     <Compile Include="Classes\Inventory.cs" />
     <Compile Include="Classes\Item.cs" />
-    <Compile Include="Classes\Keypad.cs" />
     <Compile Include="Classes\PaymentController.cs" />
     <Compile Include="Classes\ShoppingCart.cs" />
     <Compile Include="Classes\InventoryController.cs" />

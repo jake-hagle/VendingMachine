@@ -16,7 +16,7 @@ namespace VendingMachine.Classes
         
         public void Vend(TextBox outputTextBlock)
         {
-            if (Item.Quantity > 1)
+            if (Item.Quantity >= 1)
             {
                 var i = Item.Quantity;
                 while (i != 0)

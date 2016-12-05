@@ -37,10 +37,7 @@ namespace VendingMachine.Classes
             return Items;
         }
 
-        public void SaveInventory(FileStream inventoryFile)
-        {
-            //Write new inventory to file
-        }
+        
 
     }
 

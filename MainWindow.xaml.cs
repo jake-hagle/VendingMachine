@@ -28,7 +28,6 @@ namespace VendingMachine
         public Inventory Inventory { get; set; }
         public ShoppingCart ShoppingCart { get; set; }
         public Vender Vender { get; set; }
-        public Keypad Keypad { get; set; }
         public InventoryController InventoryController { get; set; }
         public PaymentController PaymentController { get; set; }
 
@@ -42,7 +41,6 @@ namespace VendingMachine
             ShoppingCart = new ShoppingCart();
             ShoppingCart.CartItems = new List<Item>();
             Vender = new Vender();
-            Keypad = new Keypad();
             InventoryController = new InventoryController();
             InventoryController.SelectedItem = new Item();
             PaymentController = new PaymentController();
@@ -50,7 +48,7 @@ namespace VendingMachine
             var inventoryFile = "file.txt";
             Inventory.Items = Inventory.GenerateInventory(inventoryFile);
 
-            VendingMachineOutput.Text = "Vendo-Tron 3000:\n Please make a selection!\n";
+            VendingMachineOutput.Text = "Please make a selection!\n";
             VendingMachineOutput.ScrollToEnd();
 
         }
@@ -156,7 +154,7 @@ namespace VendingMachine
 
                     InventoryController.Total = 0;
                     ShoppingCart.ClearCart();
-
+                    VendingMachineOutput.Text += "------------------------------------\n";
                     VendingMachineOutput.Text += "\n Please make a selection or insert payment.\n";
                     VendingMachineOutput.ScrollToEnd();
 
@@ -198,12 +196,13 @@ namespace VendingMachine
                 
                 VendingMachineOutput.Text += "Dispensing Change...\n" + "Change Due: $" + changeDue + "\n";
                 VendingMachineOutput.ScrollToEnd();
-
+                VendingMachineOutput.Text += "------------------------------------\n";
             }
             else if (ShoppingCart.CartItems.Count() != 0 && PaymentController.Payment == 0)
             {
                 VendingMachineOutput.Text += "Canceling Transaction...\n";
                 VendingMachineOutput.ScrollToEnd();
+                VendingMachineOutput.Text += "------------------------------------\n";
             }
             else
             {

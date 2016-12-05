@@ -1,4 +1,4 @@
-Mt. Dew, 1.25, 10, 1
+Mt. Dew, 1.00, 10, 1
 Pepsi, 1.25, 8, 2
-Dr. Pepper, 1.25, 2, 3
-Coke, .01, 100, 4
+Dr. Pepper, 1.75, 2, 3
+Coke, .75, 100, 4

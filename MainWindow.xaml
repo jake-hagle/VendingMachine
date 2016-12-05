@@ -8,10 +8,10 @@
         Title="MainWindow" Height="667.313" Width="1167.272">
     <Grid>
         <Grid HorizontalAlignment="Left" Height="449" Margin="40,53,0,0" VerticalAlignment="Top" Width="224">
-            <Button x:Name="Item1" Uid="1" Content="Item1" Click="SelectItemOnClick" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Width="204" Height="36"/>
-            <Button x:Name="Item2" Uid ="2" Content="Item2" Click="SelectItemOnClick" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top" Width="204" Height="36"/>
-            <Button x:Name="Item3" Uid="3" Content="Item3" Click="SelectItemOnClick" HorizontalAlignment="Left" Margin="10,241,0,0" VerticalAlignment="Top" Width="204" Height="37"/>
-            <Button x:Name="Item4" Uid="4" Content="Item4" Click="SelectItemOnClick" HorizontalAlignment="Left" Margin="10,304,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.528,7.035" Height="37"/>
+            <Button x:Name="Item1" Uid="1" Content="Mt. Dew" Click="SelectItemOnClick" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Width="204" Height="36"/>
+            <Button x:Name="Item2" Uid ="2" Content="Pepsi" Click="SelectItemOnClick" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top" Width="204" Height="36"/>
+            <Button x:Name="Item3" Uid="3" Content="Dr. Pepper" Click="SelectItemOnClick" HorizontalAlignment="Left" Margin="10,241,0,0" VerticalAlignment="Top" Width="204" Height="37"/>
+            <Button x:Name="Item4" Uid="4" Content="Coke" Click="SelectItemOnClick" HorizontalAlignment="Left" Margin="10,304,0,0" VerticalAlignment="Top" Width="204" RenderTransformOrigin="0.528,7.035" Height="37"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="306" Margin="412,160,0,0" VerticalAlignment="Top" Width="274">
 
