@@ -48,7 +48,7 @@ namespace VendingMachine
             var inventoryFile = "file.txt";
             Inventory.Items = Inventory.GenerateInventory(inventoryFile);
 
-            VendingMachineOutput.Text = "Please make a selection!\n";
+            VendingMachineOutput.Text = "Please make a selection.\n";
             VendingMachineOutput.ScrollToEnd();
 
         }
@@ -126,7 +126,7 @@ namespace VendingMachine
         {
 
             InventoryController.Total = InventoryController.CalcTotal(ShoppingCart);
-            if (InventoryController.Total == 0) return;
+            //if (InventoryController.Total == 0) return;
             if (PaymentController != null && PaymentController.CurrentPayment != 0)
             {
                 PaymentController.ComparePaymentToCost(InventoryController.Total);
